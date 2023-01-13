@@ -28,5 +28,12 @@ class CardTest {
 
 		Assert.assertEquals("Juneau", card.answer);
 	}
+	
+	@Test
+	void shouldHaveASubjectAttribute() {
+		Card card = new Card("What is the capital of Alaska?", "Juneau", "Geography");
+
+		Assert.assertEquals("Geography", card.subject);
+	}
 
 }
