@@ -34,4 +34,13 @@ class TurnTest {
 		
 		Assert.assertEquals(true, turn.correct());
 	}
+	
+	@Test
+	 void shouldHaveAFeedbackMethod() {
+		String guess = "Juneau";
+		Card card = new Card("What is the capital of Alaska?", "Juneau", "Geography");
+		Turn turn = new Turn(guess, card);
+		
+		Assert.assertEquals("Correct!", turn.feedback());
+	}
 }

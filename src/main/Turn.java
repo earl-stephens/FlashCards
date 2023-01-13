@@ -13,5 +13,13 @@ public class Turn {
 		return guess == card.answer;
 	}
 	
-
+	public String feedback() {
+		String feedback = null;
+		
+		if(correct()) {
+			feedback = "Correct!";
+		}
+		
+		return feedback;
+	}
 }
