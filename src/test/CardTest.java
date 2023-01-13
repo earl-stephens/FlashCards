@@ -33,7 +33,7 @@ class CardTest {
 	void shouldHaveASubjectAttribute() {
 		Card card = new Card("What is the capital of Alaska?", "Juneau", "Geography");
 
-		Assert.assertEquals("Geography", card.subject);
+		Assert.assertEquals("Geography", card.category);
 	}
 
 }
