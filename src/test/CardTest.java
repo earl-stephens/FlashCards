@@ -14,5 +14,19 @@ class CardTest {
 		
 		Assert.assertNotNull(card);
 	}
+	
+	@Test
+	void shouldHaveAQuestionAttribute() {
+		Card card = new Card("What is the capital of Alaska?", "Juneau", "Geography");
+
+		Assert.assertEquals("What is the capital of Alaska?", card.question);
+	}
+	
+	@Test
+	void shouldHaveAnAnswerAttribute() {
+		Card card = new Card("What is the capital of Alaska?", "Juneau", "Geography");
+
+		Assert.assertEquals("Juneau", card.answer);
+	}
 
 }
