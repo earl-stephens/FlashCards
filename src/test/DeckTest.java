@@ -15,7 +15,7 @@ class DeckTest {
 	@Test
 	void TestForADeckClass() {
 		Deck deck = new Deck(cards);
-		Assert.assertNotEquals(5, 6);;
+		Assert.assertNotNull(deck);;
 	}
 
 }
