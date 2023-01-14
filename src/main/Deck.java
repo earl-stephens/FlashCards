@@ -6,4 +6,8 @@ public class Deck {
 	public Deck(Card[] card) {
 		this.card = card;
 	}
+	
+	public int count() {
+		return card.length;
+	}
 }

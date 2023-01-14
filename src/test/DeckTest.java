@@ -13,9 +13,23 @@ class DeckTest {
 	Card cards[] = {card_1, card_2, card_3};
 
 	@Test
-	void TestForADeckClass() {
+	void testForADeckClass() {
 		Deck deck = new Deck(cards);
 		Assert.assertNotNull(deck);;
+	}
+	
+	@Test
+	void testForNumberOfCardsInADeck() {
+		Deck deck = new Deck(cards);
+		
+		Assert.assertEquals(3, deck.count());
+	}
+	
+	@Test
+	void testForNumberOfCardsInADeckWrongAnswer() {
+		Deck deck = new Deck(cards);
+		
+		Assert.assertNotEquals(5, deck.count());
 	}
 
 }
