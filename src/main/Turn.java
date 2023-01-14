@@ -18,6 +18,8 @@ public class Turn {
 		
 		if(correct()) {
 			feedback = "Correct!";
+		} else {
+			feedback = "Incorrect.";
 		}
 		
 		return feedback;

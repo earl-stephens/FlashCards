@@ -43,4 +43,22 @@ class TurnTest {
 		
 		Assert.assertEquals("Correct!", turn.feedback());
 	}
+	
+	@Test
+	 void testCorrectMethodForWrongAnswer() {
+		String guess = "Wichita";
+		Card card = new Card("What is the capital of Alaska?", "Juneau", "Geography");
+		Turn turn = new Turn(guess, card);
+		
+		Assert.assertEquals(false, turn.correct());
+	}
+	
+	@Test
+	 void feedbackMethodShouldSignalWrongAnswers() {
+		String guess = "Wichita";
+		Card card = new Card("What is the capital of Alaska?", "Juneau", "Geography");
+		Turn turn = new Turn(guess, card);
+		
+		Assert.assertEquals("Incorrect.", turn.feedback());
+	}
 }
