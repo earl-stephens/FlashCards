@@ -13,15 +13,16 @@ public class Deck {
 		return card.size();
 	}
 	
-	/*public Card cards_in_category(String selectedCategory) {
-		Card categoryArray[];
+	public ArrayList<Card> cards_in_category(String selectedCategory) {
+		ArrayList<Card> categoryArray = new ArrayList<>();
 		
-		for(int i = 0; i < card.length; i++) {
-			if(card[i].category == selectedCategory) {
-				categoryArray;
+		for(int i = 0; i < card.size(); i++) {
+		//for(ArrayList<Card> testArray : categoryArray) {
+			if(card.get(i).category == selectedCategory) {
+				categoryArray.add(card.get(i));
 			}
 		}
 		return categoryArray;
 	}
-	*/
+	
 }

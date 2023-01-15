@@ -42,13 +42,19 @@ class DeckTest {
 		
 		Assert.assertNotEquals(5, deck.count());
 	}
-	/*
+	
 	@Test
 	void testForNumberOfCardsInACategory() {
 		Deck deck = new Deck(cards);
-		Card categoryArray[] = {card_2, card_3};
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		//Card categoryArray[] = {card_2, card_3};
+		ArrayList<Card> categoryArray = new ArrayList<>();
+		categoryArray.add(card_2);
+		categoryArray.add(card_3);
 		
 		Assert.assertEquals(categoryArray, deck.cards_in_category("STEM"));
 	}
-	*/
+	
 }
