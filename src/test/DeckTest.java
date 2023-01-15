@@ -49,12 +49,25 @@ class DeckTest {
 		cards.add(card_1);
 		cards.add(card_2);
 		cards.add(card_3);
-		//Card categoryArray[] = {card_2, card_3};
 		ArrayList<Card> categoryArray = new ArrayList<>();
 		categoryArray.add(card_2);
 		categoryArray.add(card_3);
 		
 		Assert.assertEquals(categoryArray, deck.cards_in_category("STEM"));
+	}
+	
+	@Test
+	void testForNumberOfCardsInACategoryThatDoesntExist() {
+		Deck deck = new Deck(cards);
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		ArrayList<Card> categoryArray = new ArrayList<>();
+		categoryArray.add(card_1);
+		categoryArray.add(card_2);
+		categoryArray.add(card_3);
+		
+		Assert.assertEquals(0, deck.cards_in_category("Pop Culture").size());
 	}
 	
 }
