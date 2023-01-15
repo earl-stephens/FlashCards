@@ -24,5 +24,16 @@ class RoundTest {
 		Round round = new Round(deck);
 		Assert.assertNotNull(round);
 	}
+	
+	@Test 
+	void testThatTurnsIsEmptyAtStart() {
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		Deck deck = new Deck(cards);
+		
+		Round round = new Round(deck);
+		Assert.assertEquals(0, round.turns.size());
+	}
 
 }
