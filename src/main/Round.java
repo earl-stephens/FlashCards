@@ -49,4 +49,18 @@ public class Round {
 	public double percent_correct() {
 		return ((double)number_correct() / (currentCardCounter - 1)) * 100;
 	}
+	
+	public double percent_correct_by_category(String category) {
+		double numberRight = number_correct_in_category(category);
+		double total = 0;
+		for(Turn turn : turns) {
+			if(turn.card.category == category) {
+				++total;
+			}
+		}
+		if(total == 0) {
+			return 0.00;
+		} else
+		return (numberRight / total) * 100;
+	}
 }
