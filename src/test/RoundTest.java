@@ -70,5 +70,21 @@ class RoundTest {
 		
 		Assert.assertEquals("Correct!", round.take_turn("Juneau", card_1).feedback());
 	}
-
+	
+	@Test
+	void testThatTakeTurnMethodUpdatesTheTurnArray() {
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		Deck deck = new Deck(cards);
+		Round round = new Round(deck);
+		
+		round.take_turn("Juneau", round.deck.card.get(0));
+		
+		Assert.assertEquals(1, round.turns.size());
+		
+		round.take_turn("Mars", round.deck.card.get(1));
+		
+		Assert.assertEquals(2, round.turns.size());
+	}
 }
