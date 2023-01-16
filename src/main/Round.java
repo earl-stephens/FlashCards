@@ -17,4 +17,10 @@ public class Round {
 			return deck.card.get(turns.size() -1);
 		}
 	}
+	
+	public Turn take_turn(String guess, Card card) {
+		card = current_card();
+		Turn currentTurn = new Turn(guess, card);
+		return currentTurn;
+	}
 }

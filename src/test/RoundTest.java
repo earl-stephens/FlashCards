@@ -59,5 +59,16 @@ class RoundTest {
 		
 		Assert.assertEquals(card_2, round.current_card());
 	}
+	
+	@Test
+	void testThatTakeTurnMethodCreatesATurnObject() {
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		Deck deck = new Deck(cards);
+		Round round = new Round(deck);
+		
+		Assert.assertEquals("Correct!", round.take_turn("Juneau", card_1).feedback());
+	}
 
 }
