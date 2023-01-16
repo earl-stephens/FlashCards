@@ -114,4 +114,20 @@ class RoundTest {
 		
 		Assert.assertEquals(2, round.number_correct());
 	}
+	
+	@Test
+	void testNumberCorrectByCategory() {
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		Deck deck = new Deck(cards);
+		Round round = new Round(deck);
+		round.take_turn("Juneau", round.deck.card.get(0));
+		round.take_turn("Mars", round.deck.card.get(1));
+		round.take_turn("North north west", round.deck.card.get(2));
+		
+		Assert.assertEquals(2, round.number_correct_in_category("STEM"));
+		Assert.assertEquals(1, round.number_correct_in_category("Geography"));
+		Assert.assertEquals(0, round.number_correct_in_category("Pop Culture"));
+	}
 }

@@ -35,4 +35,14 @@ public class Round {
 		}
 		return counter;
 	}
+	
+	public int number_correct_in_category(String category) {
+		int categoryCounter = 0;
+		for(Turn turn : turns) {
+			if(turn.card.category == category && turn.correct()) {
+				++categoryCounter;
+			}
+		}
+		return categoryCounter;
+	}
 }
