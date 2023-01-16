@@ -45,4 +45,8 @@ public class Round {
 		}
 		return categoryCounter;
 	}
+	
+	public double percent_correct() {
+		return ((double)number_correct() / (currentCardCounter - 1)) * 100;
+	}
 }

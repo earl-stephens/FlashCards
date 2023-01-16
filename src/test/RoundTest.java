@@ -130,4 +130,32 @@ class RoundTest {
 		Assert.assertEquals(1, round.number_correct_in_category("Geography"));
 		Assert.assertEquals(0, round.number_correct_in_category("Pop Culture"));
 	}
+	
+	@Test
+	void testPercentCorrect() {
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		Deck deck = new Deck(cards);
+		Round round = new Round(deck);
+		round.take_turn("Juneau", round.deck.card.get(0));
+		round.take_turn("Venus", round.deck.card.get(1));
+		round.take_turn("North north west", round.deck.card.get(2));
+		
+		Assert.assertEquals(66.67, round.percent_correct(), 0.02);
+	}
+	
+	@Test
+	void testPercentCorrectSecondRun() {
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		Deck deck = new Deck(cards);
+		Round round = new Round(deck);
+		round.take_turn("Juneau", round.deck.card.get(0));
+		round.take_turn("Venus", round.deck.card.get(1));
+		round.take_turn("North north east", round.deck.card.get(2));
+		
+		Assert.assertEquals(33.33, round.percent_correct(), 0.02);
+	}
 }
