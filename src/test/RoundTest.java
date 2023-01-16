@@ -48,16 +48,16 @@ class RoundTest {
 	}
 	
 	@Test
-	void testThatFirstCardIsInTheDeckIsCorrectWithAnotherTurn() {
+	void testThatTheCardIsInTheDeckIsCorrectWithAnotherTurn() {
 		cards.add(card_1);
 		cards.add(card_2);
 		cards.add(card_3);
 		Deck deck = new Deck(cards);
 		Round round = new Round(deck);
-		round.turns.add(new Turn("Juneau", card_1));
-		round.turns.add(new Turn("Mars", card_2));
+		round.take_turn("Juneau", card_1);
+		round.take_turn("Mars", card_2);
 		
-		Assert.assertEquals(card_2, round.current_card());
+		Assert.assertEquals(card_3, round.current_card());
 	}
 	
 	@Test
@@ -80,11 +80,9 @@ class RoundTest {
 		Round round = new Round(deck);
 		
 		round.take_turn("Juneau", round.deck.card.get(0));
-		
 		Assert.assertEquals(1, round.turns.size());
 		
 		round.take_turn("Mars", round.deck.card.get(1));
-		
 		Assert.assertEquals(2, round.turns.size());
 	}
 	
@@ -97,11 +95,23 @@ class RoundTest {
 		Round round = new Round(deck);
 		
 		round.take_turn("Juneau", round.deck.card.get(0));
-		
-		Assert.assertEquals(card_1, round.current_card());
+		Assert.assertEquals(card_2, round.current_card());
 		
 		round.take_turn("Mars", round.deck.card.get(1));
+		Assert.assertEquals(card_3, round.current_card());
+	}
+	
+	@Test
+	void testThatNumberCorrectIsRight() {
+		cards.add(card_1);
+		cards.add(card_2);
+		cards.add(card_3);
+		Deck deck = new Deck(cards);
+		Round round = new Round(deck);
+		round.take_turn("pink", round.deck.card.get(0));
+		round.take_turn("Mars", round.deck.card.get(1));
+		round.take_turn("North north west", round.deck.card.get(2));
 		
-		Assert.assertEquals(card_2, round.current_card());
+		Assert.assertEquals(2, round.number_correct());
 	}
 }
