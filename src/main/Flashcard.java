@@ -1,16 +1,21 @@
 package main;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
 public class Flashcard {
-	public static void main(String[] args) {
+	
+	
+	public static void main(String[] args) throws IOException {
 		
-		NumberFormat nf = NumberFormat.getInstance();
-		nf.setMaximumFractionDigits(2);
 		
+		/*
 		Card card_1 = new Card("What is the capital of Alaska?", "Juneau", "Geography");
 		Card card_2 = new Card("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", "STEM");
 		Card card_3 = new Card("Describe in words the exact direction that is 697.5 degrees clockwise from due north?", "North north west", "STEM");
@@ -18,7 +23,6 @@ public class Flashcard {
 		Card card_5 = new Card("What is Rachel's favorite animal?", "Kangaroo", "Turing Staff");
 		Card card_6 = new Card("What is Mike's middle name?", "nobody knows", "Turing Staff");
 		Card card_7 = new Card("What cardboard cutout lives at Turing?", "Justin Bieber", "Pop Culture");
-		ArrayList<Card> card = new ArrayList<>();
 		card.add(card_1);
 		card.add(card_2);
 		card.add(card_3);
@@ -26,8 +30,18 @@ public class Flashcard {
 		card.add(card_5);
 		card.add(card_6);
 		card.add(card_7);
+		*/
+		
+		start();
+		
+	}
+	
+	public static void start() throws FileNotFoundException {
+		ArrayList<Card> card = loadCards();
 		Deck deck = new Deck(card);
 		Round round = new Round(deck);
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setMaximumFractionDigits(2);
 		
 		JOptionPane.showMessageDialog(null, "Welcome! You're playing with " + round.deck.count() + " cards.");
 		for(int i = round.currentCardCounter; i <= round.deck.count(); i++) {
@@ -45,5 +59,18 @@ public class Flashcard {
 
 		JOptionPane.showMessageDialog(null, "<html>" + line1 + "<br>" + line2 + "<br>" + line3 + "<br>" + line4 + "<br>" + line5 + "<br>" + line6 + "</html>");
 	}
+
+	public static ArrayList<Card> loadCards() throws FileNotFoundException {
+		Scanner diskScanner = new Scanner(new File("cards.txt"));
+		ArrayList<Card> cards = new ArrayList<>();
+		while(diskScanner.hasNextLine()) {
+			String line = diskScanner.nextLine();
+			String[] cardQuestions = line.split(",");
+			Card card = new Card(cardQuestions[0], cardQuestions[1], cardQuestions[2]);
+			cards.add(card);
+		}
+		return cards;
+	}
+
 }
 
