@@ -1,0 +1,12 @@
+What is 5 + 5?,10,STEM
+What is the capital of Alaska?,Juneau,Geography
+The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?,Mars,STEM
+Describe in words the exact direction that is 697.5 degrees clockwise from due north?,North north west,STEM
+What famous band is originally from Sweden?,ABBA,Pop Culture
+What is Jack Nicholson's famous line from The Shining?,Here's Johnny,Pop Culture
+What fictional town does Spongebob Squarepants live in?,Bikini Bottom,Pop Culture
+What state is Devil's Tower located in?,Wyoming,Geography
+What is the flattest state in the US?,Florida,Geography
+What is the first element on the periodic table?,Hydrogen,STEM
+What is the acronym for the order of operations in a math question?,PEMDAS,STEM
+What city is known as the Mile High City?,Denver,Geography
