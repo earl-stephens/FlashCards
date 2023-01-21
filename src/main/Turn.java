@@ -10,7 +10,7 @@ public class Turn {
 	}
 	
 	public boolean correct() {
-		return guess == card.answer;
+		return guess.equals(card.answer);
 	}
 	
 	public String feedback() {

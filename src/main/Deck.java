@@ -17,7 +17,7 @@ public class Deck {
 		ArrayList<Card> categoryArray = new ArrayList<>();
 		
 		for(int i = 0; i < card.size(); i++) {
-			if(card.get(i).category == selectedCategory) {
+			if(card.get(i).category.equals(selectedCategory)) {
 				categoryArray.add(card.get(i));
 			}
 		}
