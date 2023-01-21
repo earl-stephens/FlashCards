@@ -40,6 +40,7 @@ public class Flashcard {
 		ArrayList<Card> card = loadCards();
 		Deck deck = new Deck(card);
 		Round round = new Round(deck);
+		
 		NumberFormat nf = NumberFormat.getInstance();
 		nf.setMaximumFractionDigits(2);
 		
@@ -53,11 +54,11 @@ public class Flashcard {
 		String line1 = "****** Game over! ******";
 		String line2 = "You had " + round.number_correct() + " correct guesses out of " + round.deck.count() + " for a total score of " + nf.format(round.percent_correct()) + "%.";
 		String line3 = "STEM - " + nf.format(round.percent_correct_by_category("STEM")) + "% correct";
-		String line4 = "Turing Staff - " + nf.format(round.percent_correct_by_category("Turing Staff")) + "% correct";
+		//String line4 = "Turing Staff - " + nf.format(round.percent_correct_by_category("Turing Staff")) + "% correct";
 		String line5 = "Pop Culture - " + nf.format(round.percent_correct_by_category("Pop Culture")) + "% correct";
 		String line6 = "Geography - " + nf.format(round.percent_correct_by_category("Geography")) + "% correct";
 
-		JOptionPane.showMessageDialog(null, "<html>" + line1 + "<br>" + line2 + "<br>" + line3 + "<br>" + line4 + "<br>" + line5 + "<br>" + line6 + "</html>");
+		JOptionPane.showMessageDialog(null, "<html>" + line1 + "<br>" + line2 + "<br>" + line3 + "<br>" + line5 + "<br>" + line6 + "</html>");
 	}
 
 	public static ArrayList<Card> loadCards() throws FileNotFoundException {
